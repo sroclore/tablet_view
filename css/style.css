@@ -1,0 +1,272 @@
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+body {
+    background-color: #0c9c5b; 
+    display: block;
+    margin: 0; 
+    padding: 15px; 
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+header {
+    background-color: #0c9c5b;
+    display: flex;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bar {
+  background-color: #d8caca;
+  height: 3px;
+  width: 25px;
+  margin: 3px auto;
+  transition: 0.4s;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Show the menu icon when the checkbox is checked */
+#menu-toggle:checked + .menu-icon .bar:nth-child(2) {
+  width: 20px;
+}
+
+/* Show the menu icon when the checkbox is checked */
+#menu-toggle:checked + .menu-icon .bar:nth-child(1),
+#menu-toggle:checked + .menu-icon .bar:nth-child(3) {
+  width: 0;
+}
+
+/* Display the navigation menu when the checkbox is checked */
+#menu-toggle:checked ~ nav {
+  display: block;
+}
+
+/* Hide the navigation menu by default */
+nav {
+  display: none;
+  /* Add your existing nav styles */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#skip {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  background-color: white;
+  color: #000;
+  padding: 0.75em 1em;
+  text-decoration: none;
+}
+
+#skip:focus {
+  left: 0;
+  top: 0;
+}
+
+#links .active {
+  text-decoration: underline;
+  text-decoration: solid;
+}
+
+h1, h2, h3, p {
+  color: #ffffff; /* White text color for contrast */
+  text-align: center; /* Center-align the text */
+}
+
+h1 {
+  font-size: 40px; /* Adjust the heading font size */
+  margin-top: 20px; /* Add space above the heading */
+}
+
+h2 {
+  font-size: 2.5em; /* Adjust the subheading font size */
+  margin-bottom: 1em;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 22px; /* Adjust the sub-subheading font size */
+}
+
+p {
+  font-size: 18px; /* Adjust the paragraph font size */
+  line-height: 1.5; /* Increase line spacing for readability */
+  margin: 10px 0; /* Add space around paragraphs */
+}
+  
+@media screen and (max-width: 600px) {
+  h1, h2, h3, p {
+    color: #ffffff; /* White text color for contrast */
+    text-align: center; /* Center-align the text */
+  }
+  
+  h1 {
+    font-size: 40px; /* Adjust the heading font size */
+    margin-top: 20px; /* Add space above the heading */
+  }
+  
+  h2 {
+    font-size: 30px; /* Adjust the subheading font size */
+  }
+  
+  h3 {
+    font-size: 22px; /* Adjust the sub-subheading font size */
+  }
+  
+  p {
+    font-size: 18px; /* Adjust the paragraph font size */
+    line-height: 1.5; /* Increase line spacing for readability */
+    margin: 10px 0; /* Add space around paragraphs */
+  }
+  .image-container img {
+    margin-right: 5px; /* Adjust for smaller screens */
+  }
+
+  .image-left-of-text {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1, h2, h3, p {
+    color: #ffffff; /* White text color for contrast */
+    text-align: center; /* Center-align the text */
+  }
+  
+  h1 {
+    font-size: 1em; /* Adjust the heading font size */
+    margin-top: 10px; /* Add space above the heading */
+  }
+  
+  h2 {
+    font-size: 0.8em; /* Adjust the subheading font size */
+  }
+  
+  h3 {
+    font-size: 0.75em; /* Adjust the sub-subheading font size */
+  }
+  
+  p {
+    font-size: 0.6em; /* Adjust the paragraph font size */
+    line-height: 1.5; /* Increase line spacing for readability */
+    margin: 10px 0; /* Add space around paragraphs */
+  }
+  .image-container img {
+    margin-right: 10px; /* Adjust for smaller screens */
+  }
+  a:hover {
+    text-decoration: none; /* Add underline on hover for links */
+  }
+  img:active {
+    transform: scale(1.125em)
+  }
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  img[src*=".gif"] {
+      display: none;
+  }
+  img:hover {
+    transform: none;
+  }
+}
+
+.image-left-of-text {
+  display: flex;
+  align-items: flex-start;
+  height: 50vh;
+  text-align: center;
+  border-bottom: 1em;
+}
+
+.image-left-of-text figure {
+  margin: 0 0.25em 0 0;
+  width: 50%;
+  height: 100%;
+}
+
+.image-left-of-text figcaption {
+  text-align: center;
+  color: white;
+}
+
+.image-left-of-text img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text-column {
+  width: 50%;
+  box-sizing: border-box;
+  padding: .25em;
+  border-bottom: 0.125em;
+  height: 100hv;
+}
+
+.text-column p {
+  margin: 0 0 .25em;
+}
+
+.likes-list {
+  color: #ffffff; /* White text color for contrast */
+  text-align: center; /* Center-align the text */
+  height: 100hv;
+  margin-bottom: 8em;
+}
+
+  /* Style the image container */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 1em;
+    text-align: center;
+    text-decoration-color: #ffffff;
+  }
+
+  .image-container figcaption {
+    text-align: center;
+    color: white;
+  }
+  
+  /* Style individual images (optional) */
+  .image-container img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto; /* Maintain the aspect ratio of the images */
+    border: solid rgb(214, 205, 215) 2px;
+    margin: 5px;
+  }  
+  
+  /* Style links */
+  a {
+    color: #ffffff; /* White text color for links */
+    text-decoration: none; /* Remove underlines from links */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+  }
+  
